@@ -21,9 +21,7 @@
  * <http://www.gnu.org/licenses/>.                         *
  **********************************************************/
 
-// Default WIFI CONFIGURATION
-#define DEFAULT_WIFI_SSID "Abel"
-#define DEFAULT_WIFI_PASSWORD "123456789"
-#define DEFAULT_WIFI_CHANNEL "11"
+#include <config.h>
+#include <Arduino.h>
 
-
+const static String version = "0.0.1";
