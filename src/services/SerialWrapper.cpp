@@ -21,9 +21,19 @@
  * <http://www.gnu.org/licenses/>.                         *
  **********************************************************/
 
-#include <config.h>
-#include <Arduino.h>
 #include <services/SerialWrapper.h>
+#include <core.h>
 
-const static String version = "0.0.1";
-extern SerialWrapper serial;
+SerialWrapper serial(false);
+
+void SerialWrapper::begin() {
+    if (enabled) {
+        Serial.begin(9600);
+    }
+}
+
+void SerialWrapper::print(const char* message) {
+    if (enabled) {
+        Serial.println(message);
+    }
+}
